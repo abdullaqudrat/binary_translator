@@ -30,10 +30,12 @@ class BinaryTranslatorTest < Minitest::Test
   end
 
   def test_if_translates_non_character_to_nothing
+    # skip
     bt = BinaryTranslator.new
-    
-
+    assert_equal "", bt.translate("!@{$#%^&*()}")
+    assert_equal "001000000101001100001100001111000000010111001111010010001100000100", bt.translate("Hello World!")
   end
+
 
 
 
