@@ -28,5 +28,15 @@ class BinaryTranslator
       "y" => "011001",
       "z" => "011010"
     }
+    @string
+  end
+
+  def translate(string)
+    translated_characters = []
+    @string = string.chars
+    @string.map do |letter|
+      translated_characters << @alpha_to_binary[letter]
+    end
+    translated_characters.join
   end
 end
