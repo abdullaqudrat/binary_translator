@@ -17,17 +17,21 @@ class BinaryTranslatorTest < Minitest::Test
   end
 
   def test_if_translates_capitalized_to_same
-
+    bt = BinaryTranslator.new
+    assert_equal "000001", bt.translate("A")
+    assert_equal "001000000101001100001100001111", bt.translate("HeLlO")
 
   end
 
   def test_if_translates_spaces_to_six_zeros
-
-
+    bt = BinaryTranslator.new
+    assert_equal "000000", bt.translate(" ")
+    assert_equal "001000000101001100001100001111000000000001", bt.translate("Hello A")
   end
 
   def test_if_translates_non_character_to_nothing
-
+    bt = BinaryTranslator.new
+    
 
   end
 

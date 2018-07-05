@@ -1,6 +1,7 @@
 class BinaryTranslator
   def initialize
     @alpha_to_binary = {
+      " " => "000000",
       "a" => "000001",
       "b" => "000010",
       "c" => "000011",
@@ -33,7 +34,7 @@ class BinaryTranslator
 
   def translate(string)
     translated_characters = []
-    @string = string.chars
+    @string = string.downcase.chars
     @string.map do |letter|
       translated_characters << @alpha_to_binary[letter]
     end
