@@ -42,6 +42,11 @@ class BinaryTranslator
   end
 
   def translate_to_text(binary)
-    @alpha_to_binary.key(binary)
+    translated_binary = []
+    @binary = binary.scan(/....../)
+    @binary.map do |numbers|
+    translated_binary <<  @alpha_to_binary.key(numbers)
+    end
+    translated_binary.join
   end
 end
