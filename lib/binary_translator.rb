@@ -40,4 +40,8 @@ class BinaryTranslator
     end
     translated_characters.join
   end
+
+  def translate_to_text(binary)
+    @alpha_to_binary.key(binary)
+  end
 end
